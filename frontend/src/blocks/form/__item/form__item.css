@@ -1,0 +1,16 @@
+.form__item {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 29px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  height: 14px;
+  padding: 0 0 12px;
+  outline: none;
+}
+
+.form__item::placeholder {
+  color: rgba(196, 196, 196, 1);
+}

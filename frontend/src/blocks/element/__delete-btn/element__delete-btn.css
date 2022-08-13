@@ -1,0 +1,12 @@
+.element__delete-btn {
+  border: none;
+  background-color: transparent;
+  width: 18px;
+  height: 19px;
+  background-image: url(../../../images/trashcan_icon.svg);
+  background-position: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
