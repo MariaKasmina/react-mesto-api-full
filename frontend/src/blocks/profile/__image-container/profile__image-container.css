@@ -1,0 +1,33 @@
+.profile__image-container {
+  opacity: 1;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile__image-container:after {
+  opacity: 0;
+  content: '';
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black url("../../../../src/images/icon_change_avatar.png") no-repeat 47px 47px;
+  visibility: hidden;
+  transition: opacity 1s linear;
+}
+
+.profile__image-container:hover:after{
+  visibility: visible;
+  opacity: .8;
+}
+
+@media screen and (max-width: 760px) {
+  .profile__image-container {
+    align-self: center;
+    margin-left: 0;
+  }
+}

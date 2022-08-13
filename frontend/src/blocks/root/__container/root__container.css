@@ -1,0 +1,12 @@
+.root__container {
+  max-width: 880px;
+  min-width: 320px;
+  margin: 45px auto 0;
+  position: relative;
+}
+
+@media screen and (max-width: 320px) {
+  .root__container{
+    margin-top: 28px;
+  }
+}

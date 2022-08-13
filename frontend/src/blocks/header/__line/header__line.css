@@ -1,0 +1,14 @@
+.header__line {
+  opacity: .7;
+  size: 1px;
+  width: 100%;
+  margin: 40px 0 0;
+  border: none;
+  border-top: 1px solid #545454;
+}
+
+@media screen and (max-width: 320px){
+  .header__line {
+    margin-top: 31px;
+  }
+}

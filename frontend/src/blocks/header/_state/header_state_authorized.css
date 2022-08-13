@@ -1,0 +1,4 @@
+.header_state_authorized {
+  display: flex;
+  justify-content: space-between;
+}
