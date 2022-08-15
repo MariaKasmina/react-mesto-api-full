@@ -27,6 +27,7 @@ const options = {
   preflightContinue: false,
   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
   credentials: true,
+  optionSuccessStatus: 200,
 };
 
 app.use('*', cors(options));
