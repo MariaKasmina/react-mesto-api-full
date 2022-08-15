@@ -19,6 +19,24 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 app.use(express.json());
 app.use(requestLogger);
 
+
+// Массив разешённых доменов
+const allowedCors = [
+  'https://mesto4places.nomoredomains.sbs',
+  'http://mesto4places.nomoredomains.sbs',
+  'localhost:3000'
+];
+
+app.use(function(req, res, next) {
+  const { origin } = req.headers; // Записываем в переменную origin соответствующий заголовок
+
+  if (allowedCors.includes(origin)) { // Проверяем, что значение origin есть среди разрешённых доменов
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+
+  next();
+});
+
 app.post('/signin', login);
 app.post('/signup', usersRouter);
 
