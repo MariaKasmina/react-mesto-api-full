@@ -25,6 +25,7 @@ const options = {
     'http://api.mesto4places.nomoredomains.sbs',
     'https://api.mesto4places.nomoredomains.sbs'
   ],
+  preflightContinue: false,
 };
 
 app.use(cors(options));
