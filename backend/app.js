@@ -21,7 +21,7 @@ const options = {
   origin: [
     'https://mesto4places.nomoredomains.sbs',
     'http://mesto4places.nomoredomains.sbs',
-    'http://localhost:3000/',
+    'http://localhost:3000',
     'http://api.mesto4places.nomoredomains.sbs',
     'https://api.mesto4places.nomoredomains.sbs'
   ],
