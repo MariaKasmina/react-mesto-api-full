@@ -26,7 +26,7 @@ const options = {
     'https://api.mesto4places.nomoredomains.sbs'
   ],
   methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE'],
-  preflightContinue: false,
+  preflightContinue: true,
   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
   credentials: true,
   optionSuccessStatus: 200,
