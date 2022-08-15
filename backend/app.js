@@ -25,11 +25,6 @@ const options = {
     'http://api.mesto4places.nomoredomains.sbs',
     'https://api.mesto4places.nomoredomains.sbs'
   ],
-  methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE'],
-  preflightContinue: true,
-  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
-  credentials: true,
-  optionSuccessStatus: 200,
 };
 
 app.use(cors(options));
