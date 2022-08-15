@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 const mongoose = require('mongoose');
@@ -16,26 +17,22 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
 });
 
+const options = {
+  origin: [
+    'https://mesto4places.nomoredomains.sbs',
+    'http://mesto4places.nomoredomains.sbs',
+    'localhost:3000'
+  ],
+  methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  preflightContinue: false,
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
+  credentials: true,
+};
+
+app.use('*', cors(options));
+
 app.use(express.json());
 app.use(requestLogger);
-
-
-// Массив разешённых доменов
-const allowedCors = [
-  'https://mesto4places.nomoredomains.sbs',
-  'http://mesto4places.nomoredomains.sbs',
-  'localhost:3000'
-];
-
-app.use(function(req, res, next) {
-  const { origin } = req.headers; // Записываем в переменную origin соответствующий заголовок
-
-  if (allowedCors.includes(origin)) { // Проверяем, что значение origin есть среди разрешённых доменов
-    res.header('Access-Control-Allow-Origin', origin);
-  }
-
-  next();
-});
 
 app.post('/signin', login);
 app.post('/signup', usersRouter);
