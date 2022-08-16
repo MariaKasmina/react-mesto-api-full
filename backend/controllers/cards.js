@@ -34,7 +34,7 @@ function addCard(req, res, next) {
   const { name, link } = req.body;
 
   return Card.create({ name, link, owner: req.user._id })
-    .then((card) => res.status(201).send({ card }))
+    .then((card) => res.status(201).send( card ))
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
         throw new BadRequestError('Переданы некорректные данные при создании карточки.');
@@ -55,7 +55,7 @@ function addLike(req, res, next) {
     if (!card) {
       throw new NotFoundError('Передан несуществующий _id карточки.');
     }
-    res.status(200).send({ card });
+    res.status(200).send( card );
   })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
@@ -74,7 +74,7 @@ function removeLike(req, res, next) {
   ).then((card) => {
     if (!card) {
       throw new NotFoundError('Передан несуществующий _id карточки.');
-    } else res.status(200).send({ card });
+    } else res.status(200).send( card );
   })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
