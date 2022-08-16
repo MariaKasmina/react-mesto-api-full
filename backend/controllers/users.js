@@ -9,7 +9,7 @@ const ConflictError = require('../errors/conflict-err');
 
 const getUsers = (req, res, next) => User.find({})
   .then((user) => {
-    res.send({ user });
+    res.send( user );
   })
   .catch(next);
 
