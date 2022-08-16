@@ -65,7 +65,7 @@ const updateUserInfo = (req, res, next) => {
     .then((user) => {
       if (!user) {
         throw new NotFoundError('Пользователь с указанным _id не найден.');
-      } else res.send({ user });
+      } else res.send( user );
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -87,7 +87,7 @@ function updateAvatar(req, res, next) {
     .then((user) => {
       if (!user) {
         throw new NotFoundError('Пользователь с указанным _id не найден.');
-      } else res.send({ user });
+      } else res.send( user );
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
