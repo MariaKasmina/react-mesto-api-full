@@ -6,7 +6,7 @@ const ForbiddenError = require('../errors/forbidden-err');
 function getCards(req, res, next) {
   return Card.find({})
     .then((card) => {
-      res.send({ card });
+      res.send( card );
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
