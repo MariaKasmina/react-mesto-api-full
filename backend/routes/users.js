@@ -25,7 +25,7 @@ usersRouter.post('/signup', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
     about: Joi.string().min(2).max(30),
-    avatar: Joi.string().pattern(/(http|https?):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+(\.ru?|\.com?)[-A-Za-z0-9+&@#/%=~_|]+/),
+    avatar: Joi.string().pattern(/(http|https?):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+(\.ru?|\.com?|\.net?)[-A-Za-z0-9+&@#/%=~_|]+/),
     email: Joi.string().email().required(),
     password: Joi.string().required(),
   }),
@@ -40,7 +40,7 @@ usersRouter.patch('/users/me', celebrate({
 
 usersRouter.patch('/users/me/avatar', celebrate({
   body: Joi.object().keys({
-    avatar: Joi.string().pattern(/(http|https?):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+(\.ru?|\.com?)[-A-Za-z0-9+&@#/%=~_|]+/),
+    avatar: Joi.string().pattern(/(http|https?):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+(\.ru?|\.com?|\.net?)[-A-Za-z0-9+&@#/%=~_|]+/),
   }),
 }), updateAvatar); // обновление аватара текущего пользователя
 
