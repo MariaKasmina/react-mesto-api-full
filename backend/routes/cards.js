@@ -20,7 +20,7 @@ cardRouter.delete('/:cardId', celebrate({
 cardRouter.post('/', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
-    link: Joi.string().pattern(/(http|https?):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/).required(),
+    link: Joi.string().pattern(/(http|https?):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+(\.ru?|\.com?|\.net?)[-A-Za-z0-9+&@#/%=~_|]+/).required(),
   }),
 }), addCard); // добавление карточки
 
