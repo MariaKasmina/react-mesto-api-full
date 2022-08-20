@@ -38,8 +38,10 @@ function addCard(req, res, next) {
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
         throw new BadRequestError('Переданы некорректные данные при создании карточки.');
+      } else {
+        next(err);
       }
-    }).catch(next);
+    });
 }
 
 function addLike(req, res, next) {
