@@ -3,4 +3,5 @@
 Для разработки использовался react и express.
   
 ссылка на сайт https://mesto4places.nomoredomains.sbs/sign-in
-публичный ipv4 51.250.89.72
+ссылка на сервер https://api.mesto4places.nomoredomains.sbs/sign-in
+публичный ipv4 62.84.116.184
