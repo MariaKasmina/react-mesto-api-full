@@ -22,9 +22,8 @@ const getUserById = (req, res, next) => User.findById(req.params.userId)
   .catch((err) => {
     if (err.name === 'CastError') {
       throw new BadRequestError('Переданы некорректные данные при создании пользователя.');
-    }
-    next(err);
-  }).catch(next);
+    } else next(err);
+  });
 
 const getCurrentUserInfo = (req, res, next) => {
   User.findById(req.user._id).then((user) => {
@@ -105,9 +104,6 @@ const login = (req, res, next) => {
       const secretKey = NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key';
       const token = jwt.sign({ _id: user._id }, secretKey, { expiresIn: '7d' });
       res.send({ token });
-    }).catch(() => {
-      // возвращаем ошибку аутентификации
-      throw new UnauthorizedRequestError('Неверный пароль или почта');
     }).catch(next);
 };
 
