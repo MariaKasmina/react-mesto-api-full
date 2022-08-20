@@ -20,22 +20,22 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 });
 
 const origin = [
-    'https://mesto4places.nomoredomains.sbs',
-    'http://mesto4places.nomoredomains.sbs',
-    'http://localhost:3000',
-    'http://api.mesto4places.nomoredomains.sbs',
-    'https://api.mesto4places.nomoredomains.sbs'
-  ];
+  'https://mesto4places.nomoredomains.sbs',
+  'http://mesto4places.nomoredomains.sbs',
+  'http://localhost:3000',
+  'http://api.mesto4places.nomoredomains.sbs',
+  'https://api.mesto4places.nomoredomains.sbs',
+];
 
 const corsOptionsDelegate = function (req, callback) {
   let corsOptions;
   if (origin.indexOf(req.header('Origin')) !== -1) {
-    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+    corsOptions = { origin: true }; // reflect (enable) the requested origin in the CORS response
   } else {
-    corsOptions = { origin: false } // disable CORS for this request
+    corsOptions = { origin: false }; // disable CORS for this request
   }
-  callback(null, corsOptions) // callback expects two parameters: error and options
-}
+  callback(null, corsOptions); // callback expects two parameters: error and options
+};
 
 app.use(cors(corsOptionsDelegate));
 app.use(requestLogger);

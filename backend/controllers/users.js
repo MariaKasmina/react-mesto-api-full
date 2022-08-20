@@ -8,7 +8,7 @@ const ConflictError = require('../errors/conflict-err');
 
 const getUsers = (req, res, next) => User.find({})
   .then((user) => {
-    res.send( user );
+    res.send(user);
   })
   .catch(next);
 
@@ -16,7 +16,7 @@ const getUserById = (req, res, next) => User.findById(req.params.userId)
   .then((user) => {
     if (!user) {
       throw new NotFoundError('Пользователь не найден');
-    } else res.send( user );
+    } else res.send(user);
   })
   .catch((err) => {
     if (err.name === 'CastError') {
@@ -28,7 +28,7 @@ const getCurrentUserInfo = (req, res, next) => {
   User.findById(req.user._id).then((user) => {
     if (!user) {
       throw new NotFoundError('Пользователь не найден');
-    } else res.send( user );
+    } else res.send(user);
   })
     .catch(next);
 };
@@ -63,7 +63,7 @@ const updateUserInfo = (req, res, next) => {
     .then((user) => {
       if (!user) {
         throw new NotFoundError('Пользователь с указанным _id не найден.');
-      } else res.send( user );
+      } else res.send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -85,7 +85,7 @@ function updateAvatar(req, res, next) {
     .then((user) => {
       if (!user) {
         throw new NotFoundError('Пользователь с указанным _id не найден.');
-      } else res.send( user );
+      } else res.send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
